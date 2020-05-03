@@ -1,0 +1,59 @@
+<%-include("../partials/header") %>
+
+	<%function total(){
+	var sum=0;
+	cart.carts.forEach(function(cart){
+		sum =sum+cart.products.price*cart.quantity;
+	});
+		return sum;
+	}%>
+	
+
+<div class="container">
+	<h1 class="text-center">  your oders !!! </h1>
+<div class="row">
+	
+	
+<%  cart.carts.forEach(function(cart){ %>
+
+<div class="col-3.5 border mr-2 mb-3 p-0  item">
+<div class="row">
+		
+<div class="col-6 ">
+	
+<img src="<%=cart.products.image %>" class="img-fluid card-img" alt="Responsive image">	
+		
+</div>
+<div class="col-6">
+
+<%if(cart.products.bestseller =="yes"){%>
+<span class="text-warning">bestseller</span>	 
+<%}%>
+<div><%=cart.products.name%></div>
+<div><%=cart.products.price%> Rs</div>
+<div>qty : <%=cart.quantity%></div>
+<form style="display:inline" action="/product/<%= cart.products.id%>/cart/<%=cart._id%>?_method=put" method="post">
+		
+		<input type="number" min="1" max="100" step="1" placeholder="qty" name="cart[quantity]" value="<%=cart.quantity%>">
+		<button type="submit" class="btn btn-primary">change</button>
+	</form>		
+		
+<form action="/product/cart/<%= cart._id%>?_method=delete" method="post">
+	
+	<button type="submit" style="padding: 0;border: none;background: none;" class="but text-warning"> remove </button>
+</form>	
+</div>
+		
+</div>
+</div>
+
+<%})%>
+
+</div>
+	<div class="text-warning text-center"> Total amount to pay <%= total() %> rs </div>
+</div>
+<% if( total() > 0){%>
+
+<a href="/buy" class="btn btn-primary float-right" style="margin-right:10%">Buy now <i class="fas fa-shopping-bag"></i></a>
+<%}%>
+<%-include("../partials/footer") %>

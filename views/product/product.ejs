@@ -1,0 +1,126 @@
+<%- include("../partials/header") %>
+<nav id="navbar-example2">
+  <ul class=" nav heade">
+    <li class="nav-item ">
+		
+      <a class="nav-link btn-info active" href="#pizza">pizza</a>
+    </li>
+	  <li class="nav-item">
+      <a class="nav-link btn-info" href="#desserts">desserts</a>
+    </li>
+	  <li class="nav-item">
+      <a class="nav-link btn-info" href="#sandwhiches">sandwhiches</a>
+    </li>
+</ul>
+</nav>
+
+
+<div data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="container">
+	<h1 id="pizza">Pizza</h1>
+<div class="row">	
+<%  for(var i=0;i<5;i++){ %>
+
+<div class="col-3.5 border mr-2 mb-3 p-0  item">
+<div class="row">
+		
+<div class="col-6 ">
+	<a href="/product/<%= product[i]._id%>">
+<img src="<%= product[i].image%>" class="img-fluid card-img" alt="Responsive image">	
+		</a>
+</div>
+<div class="col-6">
+<a href="/product/<%= product[i]._id%>" class="text-dark" style="text-decoration : none">
+<%if(product[i].bestseller =="yes"){%>
+<span class="text-warning">bestseller</span>	 
+<%}%>
+<div><%=product[i].name%></div>
+<div><%=product[i].price%> Rs</div>
+	</a>
+	
+	
+	
+	<form style="display:inline" action="/product/<%=product[i]._id%>/addtocart" method=post>
+		
+		<input type="number" min="1" max="100" step="1" placeholder="qty" name="cart[quantity]" value="1">
+		<button type="submit"class="btn btn-primary"><i class="fas fa-shopping-cart"></i> cart</button>
+	</form>	
+	
+	
+</div>
+		
+</div>
+</div>
+	
+<%}%>
+</div>
+<h1 id="desserts">Desserts</h1>
+<div class="row">	
+<%  for(var i=5;i<9;i++){ %>
+<div class="col-3.5 border mr-2 mb-3 p-0  item">
+<div class="row">	
+<div class="col-6">
+	<a href="/product/<%= product[i]._id%>">
+<img src="<%= product[i].image%>" class="img-fluid"  alt="Responsive image">
+	</a>
+</div>
+<div class="col-6">
+	<a href="/product/<%= product[i]._id%>" class="text-dark" style="text-decoration : none">
+<%if(product[i].bestseller =="yes"){%>
+<span class="text-warning">bestseller</span>	 
+<%}%>
+<div><%=product[i].name%></div>
+		<div><%=product[i].price%> Rs</div></a>
+	
+	
+	<form style="display:inline" action="/product/<%=product[i]._id%>/addtocart" method=post>
+		
+		<input type="number" min="1" max="100" step="1" placeholder="qty" name="cart[quantity]" value="1">
+		<button type="submit"class="btn btn-primary"><i class="fas fa-shopping-cart"></i> cart</button>
+	</form>	
+</div>
+</div>
+</div>	
+<%}%>
+</div>
+<h1 id="sandwhiches">Sandwiches</h1>
+<div class="row">	
+<%  for(var i=9;i<product.length;i++){ %>
+<div class="col-3.5 border mr-2 mb-3 p-0  item">
+<div class="row">	
+<div class="col-6">
+	<a href="/product/<%= product[i]._id%>">
+<img src="<%= product[i].image%>" class="img-fluid"  alt="Responsive image">
+	</a>
+</div>
+<div class="col-6">
+	<a href="/product/<%= product[i]._id%>" class="text-dark" style="text-decoration : none">
+<%if(product[i].bestseller =="yes"){%>
+<span class="text-warning">bestseller</span>	 
+<%}%>
+<div><%=product[i].name%></div>
+		<div><%=product[i].price%> Rs</div></a>
+	
+	
+	<form style="display:inline" action="/product/<%=product[i]._id%>/addtocart" method=post>
+		
+		<input type="number" min="1" max="100" step="1" placeholder="qty" name="cart[quantity]" value="1">
+		<button type="submit"class="btn btn-primary"> <i class="fas fa-shopping-cart"></i> cart</button>
+	</form>	
+</div>
+</div>
+</div>	
+<%}%>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>	
+<%- include("../partials/footer") %>
