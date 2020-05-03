@@ -455,7 +455,7 @@ function isLoggedIn(req, res, next){
 }
 //*********************************************************end of middel ware**************************************
 
-app.listen(3000, process.env.IP, function(){
+app.listen(process.env.PORT||3000, process.env.IP, function(){
    console.log("The hotels Server Has Started!");
 });
 
