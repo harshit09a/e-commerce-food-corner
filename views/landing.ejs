@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Food</title>
+        
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="/landing.css">
+		<link rel="photos" href="photos/logo.jpg">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+    </head>
+    <body>
+		<nav  class="navbar navbar-dark bg-dark" id="landing" style="background:black position:relative;z-index:1">                               
+  <a class="navbar-brand" href="#">Food Corner</a>
+			                        
+			<ul class="nav nav-pills"> 
+				<li class="nav-item">
+      <a class="nav-link text-warning" href="#fat">AboutUs</a>
+    </li>
+    <li class="nav-item default">
+      <a class="nav-link text-warning" href="#mdo">Contact</a>
+    </li>
+				 <%if(currentUser){%>
+		<li class="nav-item">
+        <a class="nav-link text-warning" href="/product"><%= currentUser.username %></a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link text-warning" href="/logout">Logout</a>
+      </li>
+		<%}else{%>
+      <li class="nav-item mr-1">
+        <a class="nav-link text-warning" href="/login">Login</a>
+      </li>
+		<li class="nav-item mr-1">
+        <a class="nav-link text-warning" href="/register">Sign up</a>
+      </li>
+		<%}%>
+		
+		
+    
+    
+  </ul>
+</nav>
+
+  
+    <div class="container">
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+    </div>
+    
+    <div id="landing-header">
+ 		<h1 class="display-4">Welcome To Our Restaurant Food Corner </h1>
+		<a href="/product" class="btn btn-lg btn-success display-2" >Order Food</a>
+    </div>
+    <div>
+    <ul class="slideshow" style="with:100vw;">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+		<section>
+  <div class="con">
+  <div class="chevron"></div>
+  <div class="chevron"></div>
+  <div class="chevron"></div>
+  <span class="text">Scroll down</span>
+  
+</div>
+</section>
+</div>
+		<div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+		<div id="land">
+			
+			
+			<div class="row coontainer d-flex justify-content-center" style="background:#f4f1f0;"id="fat">
+			<div class="col-12 col-md-6"> 
+					<img class="img-fluid" src="https://proxy-ap-south1.goorm.io//service/5e8202a59aaac2076230a85d_d0mnZco2hyHJgFJRpjC.run-ap-south1.goorm.io/9080//file/load/logo.jpg?path=d29ya3NwYWNlJTJGdGVzdCUyRmhvdGVscyUyRnZpZXdzJTJGcGhvdG9zJTJGbG9nby5qcGc=&docker_id=d0mnZco2hyHJgFJRpjC&secure_session_id=yZINWEnYOimdK7udR0lfcnjemHRpZjqA">
+		</div>
+				<div class="col-12 col-md-6">
+					<h2 class="display-3  mt-5" style="color:#f48032;">About Us</h2>
+					<p class="display-5">Craving some delicious Greek food? Maybe you’re in the mood for a juicy steak? No matter what kind of meal you have in mind, The Spot Restaurant is ready to prepare it for you.</p>
+					<p class="display-5">Since 1973, The Spot Restaurant has been the go-to diner for residents of Binghamton, NY. Our diner serves breakfast all day, in addition to wholesome and flavorful dining options for lunch and dinner. From burgers to salads, seafood to pastas, you’ll find all kinds of hearty meals prepared fresh at The Spot Restaurant. Our diner also has a full bakery with delicious baked goods and other treats, including our famous cheesecake. Sounds delicious, right?</p>
+					<p class="display-5">The Spot Restaurant is open daily from 5 a.m. to 11 p.m. We’re here to serve you the best food around, whenever you’re looking for a great American restaurant in Binghamton, NY.</p>
+			</div>
+				</div>
+				
+			
+			</div>
+			<div id="landing">
+			<div style="background:black;">
+			<div class="row text-white" id="mdo">
+				<div class="col-3 ml-5 mr-2 mb-4 border-right border-white mt-5" style="height:20rem">
+				<h1>Follow Us</h1>
+					<div style="height:5rem;"><a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a></div>
+					<div><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></div>
+					</div>
+				<div class=" ml-5 col-3 mr-2 mt-5 mb-4 border-right border-white">
+				<h1> Hours</h1>
+					<div><i class="far fa-clock"></i> Open Now. Closes At 7:00 pm-04:00</div>
+					<div>Monday - Friday</div>
+					<div>10:00Am - 07:00Pm</div>
+					<div>Saturday - Sunday</div>
+					<div>09:00Am - 07:00Pm</div>
+					</div>
+				<div class="col-3 ml-5 mr-2 mb-4 mt-5">
+				<h1>Contact</h1>
+					<div><i class="fas fa-home"></i> 1062 Front Street</div>
+					<div><i class="fas fa-home"></i> Binghamnton ,NY 13905</div>
+					<div><i class="fas fa-phone"></i> +91-156284531321</div>
+					<div><i class="fas fa-envelope"></i><a> harshit@gmail.com</a></div>
+			     </div>
+			</div>
+		</div>
+			</div>
+		
+		</div>
+<%- include("partials/footer")%>

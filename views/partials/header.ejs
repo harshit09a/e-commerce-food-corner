@@ -16,12 +16,15 @@
        <link href="/stylesheet.css" rel="stylesheet">
 
 <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+	  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 
     <title>Foods</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg text-warning bg-success mb-5 rounded">
-  <a class="navbar-brand  text-warning" href="/product"> <i class="fas fa-pizza-slice"></i> Foods</a>
+    <nav class="navbar navbar-expand-lg text-warning bg-success mb-5 rounded" id="landing-header">
+  <a class="navbar-brand  text-warning" href="/"> <%/*<i class="fas fa-pizza-slice"></i> Foods*/%> <img src="https://proxy-ap-south1.goorm.io//service/5e8202a59aaac2076230a85d_d0mnZco2hyHJgFJRpjC.run-ap-south1.goorm.io/9080//file/load/logog.jpg?path=d29ya3NwYWNlJTJGdGVzdCUyRmhvdGVscyUyRnZpZXdzJTJGcGhvdG9zJTJGbG9nb2cuanBn&docker_id=d0mnZco2hyHJgFJRpjC&secure_session_id=eG4P7LiuW9EVy7M_SVV6MHmclUsMB4wD" style="height:2.5vw;"></a>
   <button class="navbar-toggler border border-info" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -59,12 +62,12 @@
 </nav>
 	  <div class="container">
 		<% if(error && error.length > 0){ %>
-            <div class="alert alert-danger" role="alert">
+            <div class="alert alert-danger" role="alert" id="landing-header" data-aos="flip-up">
                 <%= error %>
             </div>
         <% } %>
         <% if(success && success.length > 0){ %>
-            <div class="alert alert-success" role="alert">
+            <div class="alert alert-success" role="alert" id="landing-header" data-aos="flip-up">
                 <%= success %>
             </div>
         <% } %>

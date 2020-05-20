@@ -1,9 +1,19 @@
 <%- include("../partials/header") %>
-<nav id="navbar-example2">
+
+<ul class="slideshow" style="with:100vw;">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+
+<nav id="landing-header">
   <ul class=" nav heade">
     <li class="nav-item ">
 		
-      <a class="nav-link btn-info active" href="#pizza">pizza</a>
+      <a class="nav-link btn-info" href="#pizza">pizza</a>
     </li>
 	  <li class="nav-item">
       <a class="nav-link btn-info" href="#desserts">desserts</a>
@@ -15,12 +25,12 @@
 </nav>
 
 
-<div data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="container">
+<div data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="container" id="landing-header">
 	<h1 id="pizza">Pizza</h1>
 <div class="row">	
 <%  for(var i=0;i<5;i++){ %>
 
-<div class="col-3.5 border mr-2 mb-3 p-0  item">
+<div class="col-3.5 mr-2 mb-3 p-0  item pro" data-aos="zoom-in">
 <div class="row">
 		
 <div class="col-6 ">
@@ -31,7 +41,7 @@
 <div class="col-6">
 <a href="/product/<%= product[i]._id%>" class="text-dark" style="text-decoration : none">
 <%if(product[i].bestseller =="yes"){%>
-<span class="text-warning">bestseller</span>	 
+<span class="text-danger">bestseller</span>	 
 <%}%>
 <div><%=product[i].name%></div>
 <div><%=product[i].price%> Rs</div>
@@ -56,7 +66,7 @@
 <h1 id="desserts">Desserts</h1>
 <div class="row">	
 <%  for(var i=5;i<9;i++){ %>
-<div class="col-3.5 border mr-2 mb-3 p-0  item">
+<div class="col-3.5 mr-2 mb-3 p-0  item pro" data-aos="zoom-in">
 <div class="row">	
 <div class="col-6">
 	<a href="/product/<%= product[i]._id%>">
@@ -66,7 +76,7 @@
 <div class="col-6">
 	<a href="/product/<%= product[i]._id%>" class="text-dark" style="text-decoration : none">
 <%if(product[i].bestseller =="yes"){%>
-<span class="text-warning">bestseller</span>	 
+<span class="text-danger">bestseller</span>	 
 <%}%>
 <div><%=product[i].name%></div>
 		<div><%=product[i].price%> Rs</div></a>
@@ -85,7 +95,7 @@
 <h1 id="sandwhiches">Sandwiches</h1>
 <div class="row">	
 <%  for(var i=9;i<product.length;i++){ %>
-<div class="col-3.5 border mr-2 mb-3 p-0  item">
+<div class="col-3.5 mr-2 mb-3 p-0  item pro" data-aos="zoom-in">
 <div class="row">	
 <div class="col-6">
 	<a href="/product/<%= product[i]._id%>">
@@ -95,7 +105,7 @@
 <div class="col-6">
 	<a href="/product/<%= product[i]._id%>" class="text-dark" style="text-decoration : none">
 <%if(product[i].bestseller =="yes"){%>
-<span class="text-warning">bestseller</span>	 
+<span class="text-danger">bestseller</span>	 
 <%}%>
 <div><%=product[i].name%></div>
 		<div><%=product[i].price%> Rs</div></a>

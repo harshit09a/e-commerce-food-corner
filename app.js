@@ -43,7 +43,7 @@ passport.deserializeUser(User.deserializeUser());
 //****************************************************products routs start*****************************************************
 app.get("/",function(req,res){
 
-	res.redirect("/product");
+	res.render("landing");
 });
 app.get("/product",function(req,res){
 	
@@ -270,6 +270,10 @@ app.delete("/product/:id/comment/:comment_id",function(req,res){
 //*********************************************************start of cart rout**************************************************
 
 app.post("/product/:id/addtocart",isLoggedIn,function(req,res){
+	if(req.body.cart.quantity==0)
+		{
+			return res.redirect("/product");
+		}
 	
 	Product.findById(req.params.id,function(err,foundProduct){
 		if(err)
@@ -439,7 +443,13 @@ app.get("/logout",function(req,res){
 	res.redirect("/product");
 	
 });//***********************************************buy****************************************
-app.get("/buy",function(req,res){
+app.get("/buy/:total",function(req,res){
+	res.render("buy",{amount:req.params.total});
+	/*req.flash("success","successfully placed your order")
+	res.redirect("/product");*/
+	
+});
+app.post("/buy",function(req,res){
 	req.flash("success","successfully placed your order")
 	res.redirect("/product");
 	
